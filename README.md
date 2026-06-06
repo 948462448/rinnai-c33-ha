@@ -1,5 +1,7 @@
 # Rinnai C33 Capture for Home Assistant
 
+[中文说明](README.zh-CN.md)
+
 Experimental Home Assistant integration for Rinnai C33 boilers using the
 HF-LPB100 WiFi remote module.
 
