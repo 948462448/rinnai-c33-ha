@@ -1,0 +1,11 @@
+{
+  "domain": "rinnai_c33_capture",
+  "name": "Rinnai C33 Capture",
+  "codeowners": [
+    "@948462448"
+  ],
+  "documentation": "https://github.com/948462448/rinnai-c33-ha",
+  "issue_tracker": "https://github.com/948462448/rinnai-c33-ha/issues",
+  "iot_class": "local_push",
+  "version": "0.1.0"
+}

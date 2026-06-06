@@ -1,0 +1,34 @@
+set_dhw_temperature:
+  name: Set domestic hot water temperature
+  description: Send a target domestic hot water temperature command to the connected Rinnai remote.
+  fields:
+    temperature:
+      name: Temperature
+      description: Target temperature in Celsius.
+      required: true
+      selector:
+        number:
+          min: 30
+          max: 65
+          step: 1
+          unit_of_measurement: "°C"
+
+set_heating:
+  name: Set heating
+  description: Enable or disable space heating.
+  fields:
+    enabled:
+      name: Enabled
+      required: true
+      selector:
+        boolean:
+
+set_fast_hot_water:
+  name: Set fast hot water
+  description: Enable or disable fast hot water mode.
+  fields:
+    enabled:
+      name: Enabled
+      required: true
+      selector:
+        boolean:

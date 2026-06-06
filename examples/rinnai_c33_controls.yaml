@@ -1,0 +1,41 @@
+template:
+  - number:
+      - name: "Rinnai DHW target temperature"
+        unique_id: rinnai_c33_dhw_target_temperature_control
+        state: "{{ states('sensor.rinnai_c33_dhw_target_temperature') | int(45) }}"
+        min: 30
+        max: 65
+        step: 1
+        unit_of_measurement: "°C"
+        icon: mdi:water-thermometer
+        set_value:
+          service: rinnai_c33_capture.set_dhw_temperature
+          data:
+            temperature: "{{ value | int }}"
+
+    switch:
+      - name: "Rinnai heating control"
+        unique_id: rinnai_c33_heating_control
+        state: "{{ is_state('switch.rinnai_c33_heating', 'on') }}"
+        icon: mdi:radiator
+        turn_on:
+          service: rinnai_c33_capture.set_heating
+          data:
+            enabled: true
+        turn_off:
+          service: rinnai_c33_capture.set_heating
+          data:
+            enabled: false
+
+      - name: "Rinnai fast hot water control"
+        unique_id: rinnai_c33_fast_hot_water_control
+        state: "{{ is_state('switch.rinnai_c33_fast_hot_water', 'on') }}"
+        icon: mdi:water-boiler
+        turn_on:
+          service: rinnai_c33_capture.set_fast_hot_water
+          data:
+            enabled: true
+        turn_off:
+          service: rinnai_c33_capture.set_fast_hot_water
+          data:
+            enabled: false

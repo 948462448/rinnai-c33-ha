@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+.pytest_cache/
+
+# Captures may contain device identifiers and household behavior.
+captures/
+*.pcap
+*.pcapng
+*.log
+
+# Home Assistant private files should never be committed here.
+configuration.yaml
+secrets.yaml
+.storage/
